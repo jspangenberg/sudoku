@@ -33,6 +33,12 @@ public class GridController {
 
     @RequestMapping(path = "/", method = RequestMethod.POST, params = "action=solve")
     public String solveGrid(GridForm form, BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()) {
+            form.setCheckResult("Cells can only contain digits from 0-9");
+            return "playgrid";
+        }
+
         GridGenerator generator = new GridGenerator();
         Grid grid = generator.generate(0);
         PuzzleSolver solver = new PuzzleSolver();
@@ -48,6 +54,11 @@ public class GridController {
 
     @RequestMapping(path = "/", method = RequestMethod.POST, params = "action=check")
     public String checkGrid(GridForm form, BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()) {
+            form.setCheckResult("Cell can only contain digits from 0-9");
+            return "playgrid";
+        }
 
         GridGenerator generator = new GridGenerator();
         Grid grid = generator.generate(81);
