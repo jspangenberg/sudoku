@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Sudoku Web application</title>
+
+    <link rel="stylesheet" href="../static/css/sudoku.css" th:href="@{/css/sudoku.css}"/>
+    <!--<style>-->
+        <!--table { border-collapse: collapse; font-family: Calibri, sans-serif; }-->
+        <!--colgroup, tbody { border: solid medium; }-->
+        <!--td { border: solid thin; height: 1.4em; width: 1.4em; text-align: center; padding: 0}-->
+    <!--</style>-->
+</head>
+<body>
+
+
+<form action="#" th:action="@{/}" th:object="${gridForm}" method="post">
+    <table>
+        <caption>Sudoku</caption>
+        <colgroup><col/><col/><col/></colgroup>
+        <colgroup><col/><col/><col/></colgroup>
+        <colgroup><col/><col/><col/></colgroup>
+            <tbody>
+              <tr>
+                  <td><input type="text" size="1" th:field="*{a1}" th:value="*{a1} > 0 ? *{a1} : ''" th:name="*{a1}" th:id="*{a1}"  th:style="*{a1} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{a1} > 0" maxlength="1"/></td>
+                  <td><input type="text" size="1" th:field="*{a2}" th:value="*{a2} > 0 ? *{a2} : ''" th:name="*{a2}" th:id="*{a2}"  th:style="*{a2} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{a2} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{a3}" th:value="*{a3} > 0 ? *{a3} : ''" th:name="*{a3}" th:id="*{a3}"  th:style="*{a3} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{a3} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{a4}" th:value="*{a4} > 0 ? *{a4} : ''" th:name="*{a4}" th:id="*{a4}"  th:style="*{a4} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{a4} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{a5}" th:value="*{a5} > 0 ? *{a5} : ''" th:name="*{a5}" th:id="*{a5}"  th:style="*{a5} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{a5} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{a6}" th:value="*{a6} > 0 ? *{a6} : ''" th:name="*{a6}" th:id="*{a6}"  th:style="*{a6} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{a6} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{a7}" th:value="*{a7} > 0 ? *{a7} : ''" th:name="*{a7}" th:id="*{a7}"  th:style="*{a7} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{a7} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{a8}" th:value="*{a8} > 0 ? *{a8} : ''" th:name="*{a8}" th:id="*{a8}"  th:style="*{a8} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{a8} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{a9}" th:value="*{a9} > 0 ? *{a9} : ''" th:name="*{a9}" th:id="*{a9}"  th:style="*{a9} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{a9} > 0" maxlength="1" /></td>
+              </tr>
+              <tr>
+                  <td><input type="text" size="1" th:field="*{b1}" th:value="*{b1} > 0 ? *{b1} : ''" th:name="*{b1}" th:id="*{b1}"  th:style="*{b1} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{b1} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{b2}" th:value="*{b2} > 0 ? *{b2} : ''" th:name="*{b2}" th:id="*{b2}"  th:style="*{b2} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{b2} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{b3}" th:value="*{b3} > 0 ? *{b3} : ''" th:name="*{b3}" th:id="*{b3}"  th:style="*{b3} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{b3} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{b4}" th:value="*{b4} > 0 ? *{b4} : ''" th:name="*{b4}" th:id="*{b4}"  th:style="*{b4} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{b4} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{b5}" th:value="*{b5} > 0 ? *{b5} : ''" th:name="*{b5}" th:id="*{b5}"  th:style="*{b5} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{b5} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{b6}" th:value="*{b6} > 0 ? *{b6} : ''" th:name="*{b6}" th:id="*{b6}"  th:style="*{b6} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{b6} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{b7}" th:value="*{b7} > 0 ? *{b7} : ''" th:name="*{b7}" th:id="*{b7}"  th:style="*{b7} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{b7} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{b8}" th:value="*{b8} > 0 ? *{b8} : ''" th:name="*{b8}" th:id="*{b8}"  th:style="*{b8} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{b8} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{b9}" th:value="*{b9} > 0 ? *{b9} : ''" th:name="*{b9}" th:id="*{b9}"  th:style="*{b9} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{b9} > 0" maxlength="1" /></td>
+              </tr>
+              <tr>
+                  <td><input type="text" size="1" th:field="*{c1}" th:value="*{c1} > 0 ? *{c1} : ''" th:name="*{c1}" th:id="*{c1}"  th:style="*{c1} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{c1} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{c2}" th:value="*{c2} > 0 ? *{c2} : ''" th:name="*{c2}" th:id="*{c2}"  th:style="*{c2} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{c2} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{c3}" th:value="*{c3} > 0 ? *{c3} : ''" th:name="*{c3}" th:id="*{c3}"  th:style="*{c3} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{c3} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{c4}" th:value="*{c4} > 0 ? *{c4} : ''" th:name="*{c4}" th:id="*{c4}"  th:style="*{c4} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{c4} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{c5}" th:value="*{c5} > 0 ? *{c5} : ''" th:name="*{c5}" th:id="*{c5}"  th:style="*{c5} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{c5} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{c6}" th:value="*{c6} > 0 ? *{c6} : ''" th:name="*{c6}" th:id="*{c6}"  th:style="*{c6} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{c6} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{c7}" th:value="*{c7} > 0 ? *{c7} : ''" th:name="*{c7}" th:id="*{c7}"  th:style="*{c7} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{c7} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{c8}" th:value="*{c8} > 0 ? *{c8} : ''" th:name="*{c8}" th:id="*{c8}"  th:style="*{c8} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{c8} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:field="*{c9}" th:value="*{c9} > 0 ? *{c9} : ''" th:name="*{c9}" th:id="*{c9}"  th:style="*{c9} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{c9} > 0" maxlength="1" /></td>
+              </tr>
+            </tbody>
+
+            <tbody>
+            <tr>
+                <td><input type="text" size="1" th:field="*{d1}" th:value="*{d1} > 0 ? *{d1} : ''" th:name="*{d1}" th:id="*{d1}"  th:style="*{d1} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{d1} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{d2}" th:value="*{d2} > 0 ? *{d2} : ''" th:name="*{d2}" th:id="*{d2}"  th:style="*{d2} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{d2} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{d3}" th:value="*{d3} > 0 ? *{d3} : ''" th:name="*{d3}" th:id="*{d3}"  th:style="*{d3} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{d3} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{d4}" th:value="*{d4} > 0 ? *{d4} : ''" th:name="*{d4}" th:id="*{d4}"  th:style="*{d4} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{d4} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{d5}" th:value="*{d5} > 0 ? *{d5} : ''" th:name="*{d5}" th:id="*{d5}"  th:style="*{d5} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{d5} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{d6}" th:value="*{d6} > 0 ? *{d6} : ''" th:name="*{d6}" th:id="*{d6}"  th:style="*{d6} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{d6} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{d7}" th:value="*{d7} > 0 ? *{d7} : ''" th:name="*{d7}" th:id="*{d7}"  th:style="*{d7} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{d7} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{d8}" th:value="*{d8} > 0 ? *{d8} : ''" th:name="*{d8}" th:id="*{d8}"  th:style="*{d8} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{d8} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{d9}" th:value="*{d9} > 0 ? *{d9} : ''" th:name="*{d9}" th:id="*{d9}"  th:style="*{d9} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{d9} > 0" maxlength="1" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" size="1" th:field="*{e1}" th:value="*{e1} > 0 ? *{e1} : ''" th:name="*{e1}" th:id="*{e1}"  th:style="*{e1} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{e1} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{e2}" th:value="*{e2} > 0 ? *{e2} : ''" th:name="*{e2}" th:id="*{e2}"  th:style="*{e2} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{e2} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{e3}" th:value="*{e3} > 0 ? *{e3} : ''" th:name="*{e3}" th:id="*{e3}"  th:style="*{e3} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{e3} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{e4}" th:value="*{e4} > 0 ? *{e4} : ''" th:name="*{e4}" th:id="*{e4}"  th:style="*{e4} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{e4} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{e5}" th:value="*{e5} > 0 ? *{e5} : ''" th:name="*{e5}" th:id="*{e5}"  th:style="*{e5} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{e5} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{e6}" th:value="*{e6} > 0 ? *{e6} : ''" th:name="*{e6}" th:id="*{e6}"  th:style="*{e6} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{e6} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{e7}" th:value="*{e7} > 0 ? *{e7} : ''" th:name="*{e7}" th:id="*{e7}"  th:style="*{e7} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{e7} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{e8}" th:value="*{e8} > 0 ? *{e8} : ''" th:name="*{e8}" th:id="*{e8}"  th:style="*{e8} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{e8} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{e9}" th:value="*{e9} > 0 ? *{e9} : ''" th:name="*{e9}" th:id="*{e9}"  th:style="*{e9} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{e9} > 0" maxlength="1" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" size="1" th:field="*{f1}" th:value="*{f1} > 0 ? *{f1} : ''" th:name="*{f1}" th:id="*{f1}"  th:style="*{f1} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{f1} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{f2}" th:value="*{f2} > 0 ? *{f2} : ''" th:name="*{f2}" th:id="*{f2}"  th:style="*{f2} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{f2} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{f3}" th:value="*{f3} > 0 ? *{f3} : ''" th:name="*{f3}" th:id="*{f3}"  th:style="*{f3} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{f3} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{f4}" th:value="*{f4} > 0 ? *{f4} : ''" th:name="*{f4}" th:id="*{f4}"  th:style="*{f4} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{f4} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{f5}" th:value="*{f5} > 0 ? *{f5} : ''" th:name="*{f5}" th:id="*{f5}"  th:style="*{f5} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{f5} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{f6}" th:value="*{f6} > 0 ? *{f6} : ''" th:name="*{f6}" th:id="*{f6}"  th:style="*{f6} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{f6} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{f7}" th:value="*{f7} > 0 ? *{f7} : ''" th:name="*{f7}" th:id="*{f7}"  th:style="*{f7} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{f7} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{f8}" th:value="*{f8} > 0 ? *{f8} : ''" th:name="*{f8}" th:id="*{f8}"  th:style="*{f8} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{f8} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{f9}" th:value="*{f9} > 0 ? *{f9} : ''" th:name="*{f9}" th:id="*{f9}"  th:style="*{f9} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{f9} > 0" maxlength="1" /></td>
+            </tr>
+            </tbody>
+
+            <tbody>
+            <tr>
+                <td><input type="text" size="1" th:field="*{g1}" th:value="*{g1} > 0 ? *{g1} : ''" th:name="*{g1}" th:id="*{g1}"  th:style="*{g1} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{g1} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{g2}" th:value="*{g2} > 0 ? *{g2} : ''" th:name="*{g2}" th:id="*{g2}"  th:style="*{g2} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{g2} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{g3}" th:value="*{g3} > 0 ? *{g3} : ''" th:name="*{g3}" th:id="*{g3}"  th:style="*{g3} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{g3} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{g4}" th:value="*{g4} > 0 ? *{g4} : ''" th:name="*{g4}" th:id="*{g4}"  th:style="*{g4} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{g4} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{g5}" th:value="*{g5} > 0 ? *{g5} : ''" th:name="*{g5}" th:id="*{g5}"  th:style="*{g5} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{g5} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{g6}" th:value="*{g6} > 0 ? *{g6} : ''" th:name="*{g6}" th:id="*{g6}"  th:style="*{g6} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{g6} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{g7}" th:value="*{g7} > 0 ? *{g7} : ''" th:name="*{g7}" th:id="*{g7}"  th:style="*{g7} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{g7} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{g8}" th:value="*{g8} > 0 ? *{g8} : ''" th:name="*{g8}" th:id="*{g8}"  th:style="*{g8} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{g8} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{g9}" th:value="*{g9} > 0 ? *{g9} : ''" th:name="*{g9}" th:id="*{g9}"  th:style="*{g9} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{g9} > 0" maxlength="1" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" size="1" th:field="*{h1}" th:value="*{h1} > 0 ? *{h1} : ''" th:name="*{h1}" th:id="*{h1}"  th:style="*{h1} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{h1} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{h2}" th:value="*{h2} > 0 ? *{h2} : ''" th:name="*{h2}" th:id="*{h2}"  th:style="*{h2} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{h2} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{h3}" th:value="*{h3} > 0 ? *{h3} : ''" th:name="*{h3}" th:id="*{h3}"  th:style="*{h3} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{h3} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{h4}" th:value="*{h4} > 0 ? *{h4} : ''" th:name="*{h4}" th:id="*{h4}"  th:style="*{h4} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{h4} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{h5}" th:value="*{h5} > 0 ? *{h5} : ''" th:name="*{h5}" th:id="*{h5}"  th:style="*{h5} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{h5} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{h6}" th:value="*{h6} > 0 ? *{h6} : ''" th:name="*{h6}" th:id="*{h6}"  th:style="*{h6} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{h6} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{h7}" th:value="*{h7} > 0 ? *{h7} : ''" th:name="*{h7}" th:id="*{h7}"  th:style="*{h7} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{h7} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{h8}" th:value="*{h8} > 0 ? *{h8} : ''" th:name="*{h8}" th:id="*{h8}"  th:style="*{h8} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{h8} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{h9}" th:value="*{h9} > 0 ? *{h9} : ''" th:name="*{h9}" th:id="*{h9}"  th:style="*{h9} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{h9} > 0" maxlength="1" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" size="1" th:field="*{i1}" th:value="*{i1} > 0 ? *{i1} : ''" th:name="*{i1}" th:id="*{i1}"  th:style="*{i1} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i1} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{i2}" th:value="*{i2} > 0 ? *{i2} : ''" th:name="*{i2}" th:id="*{i2}"  th:style="*{i2} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i2} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{i3}" th:value="*{i3} > 0 ? *{i3} : ''" th:name="*{i3}" th:id="*{i3}"  th:style="*{i3} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i3} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{i4}" th:value="*{i4} > 0 ? *{i4} : ''" th:name="*{i4}" th:id="*{i4}"  th:style="*{i4} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i4} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{i5}" th:value="*{i5} > 0 ? *{i5} : ''" th:name="*{i5}" th:id="*{i5}"  th:style="*{i5} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i5} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{i6}" th:value="*{i6} > 0 ? *{i6} : ''" th:name="*{i6}" th:id="*{i6}"  th:style="*{i6} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i6} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{i7}" th:value="*{i7} > 0 ? *{i7} : ''" th:name="*{i7}" th:id="*{i7}"  th:style="*{i7} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i7} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{i8}" th:value="*{i8} > 0 ? *{i8} : ''" th:name="*{i8}" th:id="*{i8}"  th:style="*{i8} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i8} > 0" maxlength="1" /></td>
+                <td><input type="text" size="1" th:field="*{i9}" th:value="*{i9} > 0 ? *{i9} : ''" th:name="*{i9}" th:id="*{i9}"  th:style="*{i9} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i9} > 0" maxlength="1" /></td>
+            </tr>
+            </tbody>
+    </table>
+    <p th:text="*{checkResult}"></p>
+    <button type="submit" name="action" value="new">New Game</button>
+    <button type="submit" name="action" value="check">Check</button>
+    <button type="submit" name="action" value="solve">Solve</button>
+
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<tr>
+                  <td><input type="text" size="1" th:value="*{i1} > 0 ? *{i1} : ''" th:name="*{i1}" th:id="*{i1}"  th:style="*{i1} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i1} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:value="*{i2} > 0 ? *{i2} : ''" th:name="*{i2}" th:id="*{i2}"  th:style="*{i2} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i2} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:value="*{i3} > 0 ? *{i3} : ''" th:name="*{i3}" th:id="*{i3}"  th:style="*{i3} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i3} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:value="*{i4} > 0 ? *{i4} : ''" th:name="*{i4}" th:id="*{i4}"  th:style="*{i4} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i4} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:value="*{i5} > 0 ? *{i5} : ''" th:name="*{i5}" th:id="*{i5}"  th:style="*{i5} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i5} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:value="*{i6} > 0 ? *{i6} : ''" th:name="*{i6}" th:id="*{i6}"  th:style="*{i6} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i6} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:value="*{i7} > 0 ? *{i7} : ''" th:name="*{i7}" th:id="*{i7}"  th:style="*{i7} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i7} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:value="*{i8} > 0 ? *{i8} : ''" th:name="*{i8}" th:id="*{i8}"  th:style="*{i8} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i8} > 0" maxlength="1" /></td>
+                  <td><input type="text" size="1" th:value="*{i2} > 0 ? *{i9} : ''" th:name="*{i9}" th:id="*{i9}"  th:style="*{i9} > 0 ? 'font-weight:bold' : 'font-weight:normal'" th:readonly="*{i9} > 0" maxlength="1" /></td>
+              </tr>
